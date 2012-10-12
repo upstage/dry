@@ -1,0 +1,35 @@
+{
+  "name": "dry",
+  "description": "DRY up your stylesheets. Dry is a simple reverse-compiler for converting repetitious CSS declarations to LESS.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/sellside/dry",
+  "author": {
+    "name": "Brian Woodward",
+    "email": "brian.woodward@sellside.com",
+    "url": "http://www.woodwardb.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sellside/dry.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sellside/dry/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/sellside/dry/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/dry",
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.3.16"
+  },
+  "keywords": []
+}
