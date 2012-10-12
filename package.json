@@ -1,0 +1,42 @@
+{
+  "name": "dry",
+  "description": "Dry up your CSS, and make it easier to refactor to LESS.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/sellside/dry",
+  "author": {
+    "name": "Jon Schlinkert",
+    "email": "jonschlinkert@sellside.com",
+    "url": "https://github.com/sellside"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sellside/dry.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sellside/dry/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/sellside/dry/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "grunt.js",
+  "bin": "bin/dry",
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.3.15"
+  },
+   "keywords": [
+       "convert css",
+       "refactor css",
+       "grunt less",
+       "compile less",
+       "less" 
+   ]
+}
