@@ -1,0 +1,126 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'parserlib' ]
+2 info using npm@1.1.48
+3 info using node@v0.8.6
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose config file C:\Users\bwoodward\.npmrc
+6 verbose config file C:\Program Files\nodejs\etc\npmrc
+7 verbose config file C:\Program Files\nodejs\node_modules\npm\npmrc
+8 verbose read json C:\Dev\Misc\dry\package.json
+9 verbose read json C:\Dev\Misc\dry\node_modules\grunt\package.json
+10 verbose from cache C:\Dev\Misc\dry\package.json
+11 verbose readDependencies using package.json deps
+12 verbose cache add [ 'parserlib', null ]
+13 silly cache add name=undefined spec="parserlib" args=["parserlib",null]
+14 verbose parsed url { pathname: 'parserlib', path: 'parserlib', href: 'parserlib' }
+15 silly lockFile 22931139-parserlib parserlib
+16 verbose lock parserlib C:\Users\bwoodward\AppData\Roaming\npm-cache\22931139-parserlib.lock
+17 silly lockFile 22931139-parserlib parserlib
+18 verbose addNamed [ 'parserlib', '' ]
+19 verbose addNamed [ null, '' ]
+20 silly lockFile cd796810-parserlib parserlib@
+21 verbose lock parserlib@ C:\Users\bwoodward\AppData\Roaming\npm-cache\cd796810-parserlib.lock
+22 silly addNameRange { name: 'parserlib', range: '', hasData: false }
+23 verbose url raw parserlib
+24 verbose url resolving [ 'https://registry.npmjs.org/', './parserlib' ]
+25 verbose url resolved https://registry.npmjs.org/parserlib
+26 info retry registry request attempt 1 at 15:35:05
+27 http GET https://registry.npmjs.org/parserlib
+28 http 200 https://registry.npmjs.org/parserlib
+29 silly registry.get cb [ 200,
+29 silly registry.get   { vary: 'Accept',
+29 silly registry.get     server: 'CouchDB/1.2.0 (Erlang OTP/R15B)',
+29 silly registry.get     etag: '"2FMVJRJ49AZ82QB46X3W2MDPH"',
+29 silly registry.get     date: 'Fri, 12 Oct 2012 19:35:05 GMT',
+29 silly registry.get     'content-type': 'application/json',
+29 silly registry.get     'content-length': '3070' } ]
+30 silly addNameRange number 2 { name: 'parserlib', range: '', hasData: true }
+31 silly addNameRange versions [ 'parserlib', [ '0.1.5', '0.1.6', '0.1.8' ] ]
+32 verbose addNamed [ 'parserlib', '0.1.8' ]
+33 verbose addNamed [ '0.1.8', '0.1.8' ]
+34 silly lockFile 39ac04f2-parserlib-0-1-8 parserlib@0.1.8
+35 verbose lock parserlib@0.1.8 C:\Users\bwoodward\AppData\Roaming\npm-cache\39ac04f2-parserlib-0-1-8.lock
+36 silly lockFile 1b4a4749-rg-parserlib-parserlib-0-1-8-tgz https://registry.npmjs.org/parserlib/-/parserlib-0.1.8.tgz
+37 verbose lock https://registry.npmjs.org/parserlib/-/parserlib-0.1.8.tgz C:\Users\bwoodward\AppData\Roaming\npm-cache\1b4a4749-rg-parserlib-parserlib-0-1-8-tgz.lock
+38 verbose addRemoteTarball [ 'https://registry.npmjs.org/parserlib/-/parserlib-0.1.8.tgz',
+38 verbose addRemoteTarball   '43b2286f353c708fbeece05bd3848150952877b0' ]
+39 info retry fetch attempt 1 at 15:35:06
+40 verbose fetch to= C:\Users\BWOODW~1\AppData\Local\Temp\npm-11384\1350070506619-0.277005753479898\tmp.tgz
+41 http GET https://registry.npmjs.org/parserlib/-/parserlib-0.1.8.tgz
+42 http 200 https://registry.npmjs.org/parserlib/-/parserlib-0.1.8.tgz
+43 silly shasum updated bytes 39258
+44 info shasum 43b2286f353c708fbeece05bd3848150952877b0
+44 info shasum C:\Users\BWOODW~1\AppData\Local\Temp\npm-11384\1350070506619-0.277005753479898\tmp.tgz
+45 verbose tar unpack C:\Users\BWOODW~1\AppData\Local\Temp\npm-11384\1350070506619-0.277005753479898\tmp.tgz
+46 silly lockFile 20824f2f-506619-0-277005753479898-package C:\Users\BWOODW~1\AppData\Local\Temp\npm-11384\1350070506619-0.277005753479898\package
+47 verbose lock C:\Users\BWOODW~1\AppData\Local\Temp\npm-11384\1350070506619-0.277005753479898\package C:\Users\bwoodward\AppData\Roaming\npm-cache\20824f2f-506619-0-277005753479898-package.lock
+48 silly gunzTarPerm modes [ '755', '644' ]
+49 silly gunzTarPerm extractEntry lib/
+50 silly gunzTarPerm extractEntry lib/node-parserlib.js
+51 silly gunzTarPerm extractEntry package.json
+52 verbose read json C:\Users\BWOODW~1\AppData\Local\Temp\npm-11384\1350070506619-0.277005753479898\package\package.json
+53 warn package.json parserlib@0.1.8 No README.md file found!
+54 silly lockFile 20824f2f-506619-0-277005753479898-package C:\Users\BWOODW~1\AppData\Local\Temp\npm-11384\1350070506619-0.277005753479898\package
+55 verbose from cache C:\Users\BWOODW~1\AppData\Local\Temp\npm-11384\1350070506619-0.277005753479898\package\package.json
+56 verbose tar pack [ 'C:\\Users\\bwoodward\\AppData\\Roaming\\npm-cache\\parserlib\\0.1.8\\package.tgz',
+56 verbose tar pack   'C:\\Users\\BWOODW~1\\AppData\\Local\\Temp\\npm-11384\\1350070506619-0.277005753479898\\package' ]
+57 verbose tarball C:\Users\bwoodward\AppData\Roaming\npm-cache\parserlib\0.1.8\package.tgz
+58 verbose folder C:\Users\BWOODW~1\AppData\Local\Temp\npm-11384\1350070506619-0.277005753479898\package
+59 silly lockFile fc287111-ache-parserlib-0-1-8-package-tgz C:\Users\bwoodward\AppData\Roaming\npm-cache\parserlib\0.1.8\package.tgz
+60 verbose lock C:\Users\bwoodward\AppData\Roaming\npm-cache\parserlib\0.1.8\package.tgz C:\Users\bwoodward\AppData\Roaming\npm-cache\fc287111-ache-parserlib-0-1-8-package-tgz.lock
+61 silly lockFile fc287111-ache-parserlib-0-1-8-package-tgz C:\Users\bwoodward\AppData\Roaming\npm-cache\parserlib\0.1.8\package.tgz
+62 silly lockFile c7b6ce90-pm-cache-parserlib-0-1-8-package C:\Users\bwoodward\AppData\Roaming\npm-cache\parserlib\0.1.8\package
+63 verbose lock C:\Users\bwoodward\AppData\Roaming\npm-cache\parserlib\0.1.8\package C:\Users\bwoodward\AppData\Roaming\npm-cache\c7b6ce90-pm-cache-parserlib-0-1-8-package.lock
+64 silly lockFile c7b6ce90-pm-cache-parserlib-0-1-8-package C:\Users\bwoodward\AppData\Roaming\npm-cache\parserlib\0.1.8\package
+65 verbose tar unpack C:\Users\bwoodward\AppData\Roaming\npm-cache\parserlib\0.1.8\package.tgz
+66 silly lockFile c7b6ce90-pm-cache-parserlib-0-1-8-package C:\Users\bwoodward\AppData\Roaming\npm-cache\parserlib\0.1.8\package
+67 verbose lock C:\Users\bwoodward\AppData\Roaming\npm-cache\parserlib\0.1.8\package C:\Users\bwoodward\AppData\Roaming\npm-cache\c7b6ce90-pm-cache-parserlib-0-1-8-package.lock
+68 silly gunzTarPerm modes [ '755', '644' ]
+69 silly gunzTarPerm extractEntry package.json
+70 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+71 silly gunzTarPerm extractEntry lib/node-parserlib.js
+72 silly gunzTarPerm modified mode [ 'lib/node-parserlib.js', 438, 420 ]
+73 verbose read json C:\Users\bwoodward\AppData\Roaming\npm-cache\parserlib\0.1.8\package\package.json
+74 silly lockFile c7b6ce90-pm-cache-parserlib-0-1-8-package C:\Users\bwoodward\AppData\Roaming\npm-cache\parserlib\0.1.8\package
+75 silly shasum updated bytes 39139
+76 info shasum bb9e1ae458affb0232501c1f423e19f28ce38883
+76 info shasum C:\Users\bwoodward\AppData\Roaming\npm-cache\parserlib\0.1.8\package.tgz
+77 verbose from cache C:\Users\bwoodward\AppData\Roaming\npm-cache\parserlib\0.1.8\package\package.json
+78 verbose chmod C:\Users\bwoodward\AppData\Roaming\npm-cache\parserlib\0.1.8\package.tgz 644
+79 silly chown skipping for windows C:\Users\bwoodward\AppData\Roaming\npm-cache\parserlib\0.1.8\package.tgz
+80 silly lockFile 1b4a4749-rg-parserlib-parserlib-0-1-8-tgz https://registry.npmjs.org/parserlib/-/parserlib-0.1.8.tgz
+81 silly lockFile 39ac04f2-parserlib-0-1-8 parserlib@0.1.8
+82 silly lockFile cd796810-parserlib parserlib@
+83 silly resolved [ { name: 'parserlib',
+83 silly resolved     version: '0.1.8',
+83 silly resolved     description: 'CSSLint',
+83 silly resolved     author: { name: 'Nicholas C. Zakas' },
+83 silly resolved     os: [ 'darwin', 'linux' ],
+83 silly resolved     contributors: [],
+83 silly resolved     engines: { node: '>=0.2.0' },
+83 silly resolved     directories: { lib: 'lib' },
+83 silly resolved     main: './lib/node-parserlib.js',
+83 silly resolved     licenses: [ [Object] ],
+83 silly resolved     repository: { type: 'git', url: 'http://github.com/nzakas/parser-lib.git' },
+83 silly resolved     _id: 'parserlib@0.1.8',
+83 silly resolved     readme: 'ERROR: No README.md file found!',
+83 silly resolved     dist: { shasum: 'bb9e1ae458affb0232501c1f423e19f28ce38883' },
+83 silly resolved     _from: 'parserlib' } ]
+84 info install parserlib@0.1.8 into C:\Dev\Misc\dry
+85 info installOne parserlib@0.1.8
+86 error notsup Unsupported
+86 error notsup Not compatible with your operating system or architecture: parserlib@0.1.8
+86 error notsup Valid OS:    darwin,linux
+86 error notsup Valid Arch:  any
+86 error notsup Actual OS:   win32
+86 error notsup Actual Arch: x64
+87 error System Windows_NT 6.1.7601
+88 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "parserlib"
+89 error cwd C:\Dev\Misc\dry
+90 error node -v v0.8.6
+91 error npm -v 1.1.48
+92 error code EBADPLATFORM
+93 verbose exit [ 1, true ]
