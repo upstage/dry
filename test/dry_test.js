@@ -32,3 +32,18 @@ exports['awesome'] = {
     test.done();
   }
 };
+
+exports['refactor'] = {
+  setUp: function(done){
+    done();
+  },
+  'refactor': function(test){
+    test.expect(0);
+
+    dry.refactor('./examples/bootstrap/css/bootstrap.css', 'test.less', function(errorCount){
+      console.log('Errors: ' + errorCount);
+    });
+
+    test.done();
+  }
+};
