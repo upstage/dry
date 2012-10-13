@@ -26,7 +26,7 @@ module.exports = function(grunt) {
       globals: {}
     },
     dry: {
-      files: ['css/*.css']
+      files: ['css/bootstrap.css']
     }
   });
 
