@@ -7,10 +7,17 @@ module.exports = function(grunt) {
       files: ['test/**/*.js']
     },
     lint: {
-      files: ['grunt.js', 'lib/dry.js', 'test/**/*.js']
+      beforeConcat: ['grunt.js', 'src/*.js'],
+      afterConcat: ['release/**/*.js', 'test/**/*.js']
+    },
+    concat: {
+      node: {
+        src: ['src/node/header.js', 'src/dry.js', 'src/rules/*.js', 'src/node/footer.js'],
+        dest: 'release/dry-node.js'
+      }
     },
     watch: {
-      files: '<config:lint.files>',
+      files: '<config:concat.node.src>',
       tasks: 'default'
     },
     jshint: {
@@ -34,6 +41,6 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', 'lint test');
+  grunt.registerTask('default', 'lint:beforeConcat concat:node lint:afterConcat test');
 
 };
