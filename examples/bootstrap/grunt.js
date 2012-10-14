@@ -6,10 +6,6 @@ module.exports = function(grunt) {
     lint: {
       files: ['grunt.js']
     },
-    watch: {
-      files: '<config:lint.files>',
-      tasks: 'default'
-    },
     jshint: {
       options: {
         curly: true,
