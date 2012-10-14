@@ -2,7 +2,7 @@
 module.exports = function(grunt) {
 
   // External libs.
-  var dry = require('../../../lib/dry.js');
+  var dry = require('../../../release/dry-node.js');
 
   // ==========================================================================
   // TASKS
@@ -12,7 +12,12 @@ module.exports = function(grunt) {
 
     grunt.log.writeln('Processing all files...');
     
-    grunt.file.expandFiles(this.file.src).forEach(function(filepath) {
+    var taskDone = this.async();
+    var files = grunt.file.expandFiles(this.file.src);
+    var fileCount = files.length;
+    var filesComplete = 0;
+
+    files.forEach(function(filepath) {
       var source = filepath;
       var destination = source.replace(/\.css/, '.less');
 
@@ -20,6 +25,11 @@ module.exports = function(grunt) {
         grunt.log.writeln('Errors: ' + errorCount);
         // Otherwise, print a success message....
         grunt.log.writeln('File "' + destination + '" created.');
+        filesComplete++;
+
+        if(filesComplete >= fileCount){
+          taskDone();
+        }
       });
     });
   });
