@@ -16,9 +16,15 @@ var dry = (function(){
     var recess    = require('recess');
 
     var rules = [];
+    var refactors = [];
+    var results = [];
 
     var addRule = function(rule){
         rules.push(rule);
+    };
+
+    var addRefactor = function(refactor){
+        rules.push(refactor);
     };
 
     var refactor = function(source, destination, done){
@@ -52,6 +58,15 @@ var dry = (function(){
 
         parser.addListener("endstylesheet", function(){
             console.log("Finished parsing style sheet");
+
+            for (var i=0; i < refactors.length; i++){
+                var refact = refactors[i];
+                refact.init(results);
+            }
+
+            if(done) {
+                done(errorCount);
+            }
         });
 
         parser.addListener("error", function(event){
@@ -59,82 +74,9 @@ var dry = (function(){
             console.log("Parse error: " + event.message + " (" + event.line + "," + event.col + ")", "error");
         });
 
-        // parser.addListener("startrule", function(event){
-        //     message = "";
-        //     showMessage = false;
-
-        //     //console.log("Starting rule with " + event.selectors.length + " selector(s)");
-        //     message += ("Starting rule with " + event.selectors.length + " selector(s)") + "\n";
-
-        //     for(var i=0,len=event.selectors.length; i<len; i++){
-        //         var selector = event.selectors[i];
-
-        //         //console.log("  Selector #" + (i+1) + " (" + selector.line + "," + selector.col + ")");
-        //         message += ("  Selector #" + (i+1) + " (" + selector.line + "," + selector.col + ")") + "\n";
-
-        //         for(var j=0,count=selector.parts.length; j<count; j++){
-        //             //console.log("    Unit #" + (j+1));
-        //             message += ("    Unit #" + (j+1)) + "\n";
-
-        //             if(selector.parts[j] instanceof parserlib.css.SelectorPart){
-        //                 //console.log("      Element name: " + selector.parts[j].elementName);
-        //                 message += ("      Element name: " + selector.parts[j].elementName) + "\n";
-
-        //                 for(var k=0; k < selector.parts[j].modifiers.length; k++){
-        //                     //console.log("        Modifier: " + selector.parts[j].modifiers[k]);
-        //                     message += ("        Modifier: " + selector.parts[j].modifiers[k]) + "\n";
-        //                 }
-        //             } else {
-        //                 //console.log("      Combinator: " + selector.parts[j]);
-        //                 message += ("      Combinator: " + selector.parts[j]) + "\n";
-        //             }
-        //         }
-        //     }
-        // });
-
-        // parser.addListener("endrule", function(event){
-        //     //console.log("Ending rule with selectors [" + event.selectors + "]");
-        //     message += ("Ending rule with selectors [" + event.selectors + "]") + "\n";
-
-        //     if(showMessage){
-        //         console.log(message);
-        //     }
-        // });
-
-        // parser.addListener("property", function(event) {
-        //     //console.log("Property '" + event.property + "' has a value of '" + event.value + "' and " + (event.important ? "is" : "isn't") + " important. (" + event.property.line + "," + event.property.col + ")");
-        //     message += ("Property '" + event.property + "' has a value of '" + event.value + "' and " + (event.important ? "is" : "isn't") + " important. (" + event.property.line + "," + event.property.col + ")") + "\n";
-        //     if(event.invalid){
-        //         //console.log("    Not valid: " + event.invalid.message);
-        //         message += ("    Not valid: " + event.invalid.message) + "\n";
-        //     }
-
-        //     if(/color/g.test(event.property)) {
-        //         if(/\\/g.test(event.value) == false) {
-        //             colorMap[event.value] = (colorMap[event.value] || 0) + 1;
-        //         }
-        //     }
-
-        //     if(/^\-/.test(event.property)){
-        //         showMessage = true;
-        //     }
-        // });
-
         // initialize each rule
         var ruleCallback = function(eventArgs){
-            var tuples = [];
-            for (var key in eventArgs.data){
-                tuples.push([key, eventArgs.data[key]]);
-            }
-            tuples.sort(function(a,b){
-                a = a[1];
-                b = b[1];
-                return a < b ? 1 : (a > b ? -1 : 0);
-            });
-
-            console.log("Results (" + eventArgs.type + "): ");
-            console.log(tuples);
-            console.log();
+            results.push(eventArgs);
         };
 
         for (var i = 0; i < rules.length; i++) {
@@ -153,29 +95,8 @@ var dry = (function(){
 
             // run parser
             parser.parse(data.output[0]);
-
-            // colorMap.forEach(function(color){
-            //     console.log(color + ": " + colorMap[color]);
-            // });
-            // var tuples = [];
-
-            // for (var key in colorMap) {
-            //     tuples.push([key, colorMap[key]]);
-            // }
-
-            // tuples.sort(function(a,b){
-            //     a = a[1];
-            //     b = b[1];
-            //     return a < b ? 1 : (a > b ? -1 : 0);
-            // });
-
-            // console.log(tuples);
-
-            if(done) {
-                done(errorCount);
-            }
-
         });
+
     };
 
     var getFilename = function(filePath){
@@ -198,7 +119,8 @@ var dry = (function(){
     return {
         awesome: awesome,
         refactor: refactor,
-        addRule: addRule
+        addRule: addRule,
+        addRefactor: addRefactor
     };
     
 }());
@@ -261,6 +183,75 @@ dry.addRule((function(){
   };
 
 }()));
+
+dry.addRefactor((function(){
+
+    var init = function(data) {
+
+        console.log('here - color');
+        var sort = function(a,b){
+            a = a[1];
+            b = b[1];
+            return a < b ? 1 : (a > b ? -1 : 0);
+        };
+
+        for (var i; i < data.length; i++) {
+            var result = data[i];
+            if(/colors/.test(result.type)) {
+                var tuples = [];
+                for (var key in result.data){
+                    tuples.push([key, result.data[key]]);
+                }
+                tuples.sort(sort);
+
+                console.log("Results (" + result.type + "): ");
+                console.log(tuples);
+                console.log();
+            }
+        }
+
+    };
+
+    return {
+        init: init
+    };
+
+}()));
+
+
+dry.addRefactor((function(){
+
+    var init = function(data) {
+
+        console.log('here - fontSize');
+        var sort = function(a,b){
+            a = a[1];
+            b = b[1];
+            return a < b ? 1 : (a > b ? -1 : 0);
+        };
+
+        for (var i; i < data.length; i++) {
+            var result = data[i];
+            if(/fontSizes/.test(result.type)) {
+                var tuples = [];
+                for (var key in result.data){
+                    tuples.push([key, result.data[key]]);
+                }
+                tuples.sort(sort);
+
+                console.log("Results (" + result.type + "): ");
+                console.log(tuples);
+                console.log();
+            }
+        }
+    };
+
+    return {
+        init: init
+    };
+
+}()));
+
 
   return dry;
 

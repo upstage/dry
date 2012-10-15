@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     },
     concat: {
       node: {
-        src: ['src/node/header.js', 'src/dry.js', 'src/rules/*.js', 'src/node/footer.js'],
+        src: ['src/node/header.js', 'src/dry.js', 'src/rules/*.js', 'src/refactors/*.js', 'src/node/footer.js'],
         dest: 'release/dry-node.js'
       }
     },
