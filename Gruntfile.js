@@ -33,7 +33,6 @@ module.exports = function(grunt) {
     },
 
     concat: {
-      banner:
       dist: {
         src: [
           '<banner:meta.banner>',
