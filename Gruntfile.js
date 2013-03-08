@@ -1,3 +1,13 @@
+/*
+ * Dry
+ * http://github.com/assemble/dry
+ * Convert your CSS to LESS and DRY up your stylesheets.
+ *
+ * Copyright (c) 2013 Assemble
+ * MIT License
+ */
+
+
 'use strict';
 
 module.exports = function(grunt) {

@@ -1,6 +1,10 @@
 # Dry.
 
-DRY up your stylesheets by coverting you CSS to LESS. Dry is a simple reverse-compiler for converting repetitious CSS declarations to LESS.
+> Convert your CSS to LESS and DRY up your stylesheets.
+
+Dry is a simple reverse-compiler for converting repetitious CSS declarations to LESS.
+
+
 
 ## Getting Started
 Install the module with: `npm install dry`
