@@ -29,20 +29,20 @@ module.exports = function(grunt) {
     },
     jshint: {
       options: { jshintrc: '.jshintrc' },
-      files: ['lib/**/*.js', 'test/**/*.js', 'Gruntfile.js']
+      files: ['lib/**/*.js', 'test/**/*.js', 'Gruntfile.js', '!lib/node-parserlib.js']
     },
 
     concat: {
-      banner:
       dist: {
         src: [
           '<banner:meta.banner>',
           '<file_strip_banner:lib/dry.js>',
+          'src/build/header.js',
           'src/dry.js',
           'src/rules/*.js',
           'src/build/footer.js'
         ],
-        dest: 'tasks/dry.js'
+        dest: 'lib/dry.js'
       }
     },
 
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
       options: { mangle: false },
       plugin: {
         files: {
-          'dist/<%= pkg.name %>-<%= pkg.version %>.js' : ['<%= concat.dest %>']
+          'lib/<%= pkg.name %>-<%= pkg.version %>.js' : ['<%= concat.dest %>']
         }
       }
     },
@@ -81,7 +81,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-recess');
 
   // Load local tasks.
   grunt.loadTasks('tasks');
@@ -89,7 +88,7 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('default', [
     'concat',
-    'uglify',
+    //'uglify',
     'test'
   ]);
 
