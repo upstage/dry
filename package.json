@@ -1,5 +1,5 @@
 {
-  "name": "Dry",
+  "name": "dry",
   "description": "Covert CSS to LESS and DRY up your stylesheets. Dry is a simple reverse-compiler for converting repetitious CSS declarations to LESS.",
   "version": "0.1.1",
   "homepage": "https://github.com/assemble/assemble/dry/",
