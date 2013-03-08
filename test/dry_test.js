@@ -1,6 +1,6 @@
 'use strict';
 
-var dry = require('../release/dry-node.js');
+var dry = require('../lib/dry');
 
 /*
   ======== A Handy Little Nodeunit Reference ========

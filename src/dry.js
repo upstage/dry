@@ -1,8 +1,8 @@
 
 var dry = (function(){
 
-    var parserlib = require('../lib/node-parserlib.js');
-    var fs        = require('fs');
+    var parserlib = require('./node-parserlib.js');
+    //var fs        = require('fs');
     var recess    = require('recess');
 
     var rules = [];
@@ -34,12 +34,12 @@ var dry = (function(){
         });
 
         // set up the tree
-        var ast = {};
-        var message = "";
-        var showMessage = false;
+        //var ast = {};
+        //var message = "";
+        //var showMessage = false;
         var errorCount = 0;
-        var fontSizeMap = [];
-        var colorMap = [];
+        //var fontSizeMap = [];
+        //var colorMap = [];
 
         // set up all the events
         parser.addListener("startstylesheet", function() {
@@ -112,5 +112,5 @@ var dry = (function(){
         addRule: addRule,
         addRefactor: addRefactor
     };
-    
+
 }());
