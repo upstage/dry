@@ -54,5 +54,8 @@
     "css to less",
     "css-to-less",
     "convert css to less"
-  ]
+  ],
+  "dependencies": {
+    "recess": "~1.1.6"
+  }
 }
