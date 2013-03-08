@@ -38,6 +38,7 @@ module.exports = function(grunt) {
         src: [
           '<banner:meta.banner>',
           '<file_strip_banner:lib/dry.js>',
+          'src/build/header.js',
           'src/dry.js',
           'src/rules/*.js',
           'src/build/footer.js'
