@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     },
     jshint: {
       options: { jshintrc: '.jshintrc' },
-      files: ['lib/**/*.js', 'test/**/*.js', 'Gruntfile.js']
+      files: ['lib/**/*.js', 'test/**/*.js', 'Gruntfile.js', '!lib/node-parserlib.js']
     },
 
     concat: {

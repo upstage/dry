@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('dry', 'Refactor CSS files into LESS files.', function() {
 
-    grunt.verbose('Processing all files...');
+    grunt.verbose.writeln('Processing all files...');
 
     var done = this.async();
     var fileCount = this.files.length;
@@ -18,9 +18,9 @@ module.exports = function(grunt) {
         var destination = source.replace(/\.css/, '.less');
 
         dry.refactor(source, destination, function(errorCount){
-          grunt.verbose('Errors: ' + errorCount);
+          grunt.verbose.writeln('Errors: ' + errorCount);
           // Otherwise, print a success message....
-          grunt.verbose('File "' + destination + '" created.');
+          grunt.verbose.writeln('File "' + destination + '" created.');
           filesComplete++;
 
           if(filesComplete >= fileCount){
