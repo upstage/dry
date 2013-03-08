@@ -23,6 +23,7 @@ module.exports = function(grunt) {
     },
 
     concat: {
+      banner:
       dist: {
         src: [
           '<banner:meta.banner>',
@@ -39,7 +40,7 @@ module.exports = function(grunt) {
       options: { mangle: false },
       plugin: {
         files: {
-          'tasks/dry.min.js': ['<%= concat.dest %>']
+          'dist/<%= pkg.name %>-<%= pkg.version %>.js' : ['<%= concat.dest %>']
         }
       }
     },
@@ -51,7 +52,7 @@ module.exports = function(grunt) {
       // },
       tests: {
         files: {
-          'test/results/test.less': ['test/fixtures/bootstrap.css']
+          'test/results/test.less': [ 'test/fixtures/bootstrap.css' ]
         }
       }
     },
