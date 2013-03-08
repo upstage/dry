@@ -1,3 +1,8 @@
+//
+// Rule: fontSize.js
+// Description:
+// ------------------------------------------------
+
 dry.addRule((function(){
 
   var init = function(parser, callback) {

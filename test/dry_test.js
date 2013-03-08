@@ -1,3 +1,5 @@
+'use strict';
+
 var dry = require('../release/dry-node.js');
 
 /*
@@ -42,7 +44,7 @@ exports['refactor'] = {
   // 'refactor': function(test){
   //   test.expect(0);
 
-  //   dry.refactor('./examples/bootstrap/css/bootstrap.css', 'test.less', function(errorCount){
+  //   dry.refactor('./fixtures/bootstrap.css', 'test.less', function(errorCount){
   //     console.log('Errors: ' + errorCount);
   //   });
 
