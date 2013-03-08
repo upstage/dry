@@ -43,7 +43,7 @@ module.exports = function(grunt) {
           'src/rules/*.js',
           'src/build/footer.js'
         ],
-        dest: 'tasks/dry.js'
+        dest: 'lib/dry.js'
       }
     },
 
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
       options: { mangle: false },
       plugin: {
         files: {
-          'dist/<%= pkg.name %>-<%= pkg.version %>.js' : ['<%= concat.dest %>']
+          'lib/<%= pkg.name %>-<%= pkg.version %>.js' : ['<%= concat.dest %>']
         }
       }
     },
