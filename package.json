@@ -38,9 +38,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "recess": "~1.1.6"
-  },
-  "devDependencies": {
+    "recess": "~1.1.6",
     "grunt": "~0.4.0",
     "grunt-contrib-less": "0.5.0",
     "grunt-contrib-copy": "0.4.0",
