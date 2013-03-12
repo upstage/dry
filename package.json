@@ -30,12 +30,15 @@
       "url": "https://assemble.github.com/assemble//blob/master/LICENSE-MIT"
     }
   ],
-  "main": "lib/dry",
+  "main": "Gruntfile.js",
   "engines": {
     "node": ">= 0.8.0"
   },
   "scripts": {
     "test": "grunt test"
+  },
+  "dependencies": {
+    "recess": "~1.1.6"
   },
   "devDependencies": {
     "grunt": "~0.4.0",
@@ -54,8 +57,5 @@
     "css to less",
     "css-to-less",
     "convert css to less"
-  ],
-  "dependencies": {
-    "recess": "~1.1.6"
-  }
+  ]
 }
