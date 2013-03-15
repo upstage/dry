@@ -88,14 +88,13 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('default', [
     'concat',
-    //'uglify',
+   // 'uglify',
     'test'
   ]);
 
   // Tests to be run.
   grunt.registerTask('test', [
     'nodeunit',
-    'jshint',
-    'dry:tests'
+    'jshint'
   ]);
 };

@@ -1,4 +1,4 @@
-# Dry.
+# [Dry v0.1.1](http://github.com/assemble/dry) [![Build Status](https://travis-ci.org/assemble/dry.png)](https://travis-ci.org/assemble/dry)
 
 > Convert your CSS to LESS and DRY up your stylesheets.
 
